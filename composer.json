@@ -1,0 +1,25 @@
+{
+    "name": "agashe/var-dumper",
+    "description": "Better alternative to var_dump function in PHP",
+	"keywords": ["debug", "dump", "dumper", "debugging"],
+    "type": "library",
+	"license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Yousef",
+            "email": "engineer.mohamed.yossef@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "VarDumper\\": "src/"
+        },
+        "files": [
+            "src/helper_functions.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "require": {}
+}
