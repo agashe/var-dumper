@@ -22,3 +22,6 @@ Thumbs.db
 *.stTheme.cache
 *.sublime-workspace
 *.sublime-project
+
+# Testing Files
+example.php

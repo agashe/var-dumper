@@ -15,7 +15,7 @@
             "VarDumper\\": "src/"
         },
         "files": [
-            "src/helper_functions.php"
+            "src/helpers/functions.php"
         ]
     },
     "require-dev": {
