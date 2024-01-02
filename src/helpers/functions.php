@@ -14,7 +14,7 @@ if (!function_exists('d')) {
             $outputType = \VarDumper\Dumper::VAR_DUMPER_OUTPUT_CLI;
         }
 
-        \VarDumper\Dumper::dump($outputType, $vars, 'asas');
+        \VarDumper\Dumper::dump($outputType, $vars, debug_backtrace());
     }
 }
 
@@ -35,7 +35,7 @@ if (!function_exists('dd')) {
             header('HTTP/1.1 500 Internal Server Error');
         }
 
-        \VarDumper\Dumper::dump($outputType, $vars);
+        \VarDumper\Dumper::dump($outputType, $vars, debug_backtrace());
 
         // terminate execution 
         exit(0);
@@ -56,7 +56,7 @@ if (!function_exists('dump')) {
             $outputType = \VarDumper\Dumper::VAR_DUMPER_OUTPUT_CLI;
         }
 
-        \VarDumper\Dumper::dump($outputType, $vars);
+        \VarDumper\Dumper::dump($outputType, $vars, debug_backtrace());
     }
 }
 
@@ -71,7 +71,8 @@ if (!function_exists('dump_to_file')) {
     function dump_to_file($path, ...$vars) {
         \VarDumper\Dumper::dump(
             \VarDumper\Dumper::VAR_DUMPER_OUTPUT_FILE,
-            $vars
+            $vars,
+            debug_backtrace()
         );
     }
 }
