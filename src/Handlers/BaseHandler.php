@@ -34,7 +34,7 @@ abstract class BaseHandler
 
         $this->headerInfo = [
             'logTime' => 'Time : ' . date('d-m-Y h:i:s'),
-            'lineNumber' => 'Line :' . $debugBacktrace['line'],
+            'lineNumber' => 'Line : ' . $debugBacktrace['line'],
             'fileName' => 'File : ' . substr(
                 $debugBacktrace['file'],
                 -1 * (
@@ -64,28 +64,32 @@ abstract class BaseHandler
      * Dump the variable details.
      * 
      * @param mixed $variable
+     * @param string $key
      * @return void
      */
-    public function process($variable)
-    {        
-        $variableType = gettype($variable);
+    public function process($variable, $key = '')
+    {
+        // in case of arrays / objects we print the item's key
+        // instead of the type
+        $variableType = (!empty($key) || ($key === 0)) ?
+            $key : gettype($variable);
+
         $variableValue = $variable;
         $line = '';
 
-        switch ($variableType) {
+        switch (gettype($variable)) {
             case 'integer':
             case 'float':
             case 'double':
                 $line = "{$variableType} => {$variableValue}";
                 break;
             case 'NULL':
-                $line = "NULL";
-                break;
-            case 'array':
-                $this->processArray($variableValue);
-                break;
-            case 'object':
-                $this->processObject($variableValue);
+                if (!empty($key) || ($key === 0)) {
+                    $line = "{$variableType} => NULL";
+                } else {
+                    $line = "NULL";
+                }
+
                 break;
             case 'string':                
                 if (!(@preg_match($variableValue, '') === false)) {
@@ -108,7 +112,9 @@ abstract class BaseHandler
                     $variableType = 'Date/Time (' . strlen($variable) . ')';
                 }
                 else {
-                    $variableType = 'string (' . strlen($variable) . ')';
+                    if (empty($key) && ($key !== 0)) {
+                        $variableType = 'string (' . strlen($variable) . ')';
+                    }
                 }
 
                 $variableValue = $this->addQuotes($variableValue);
@@ -119,8 +125,14 @@ abstract class BaseHandler
                 $variableValue = $this->boolToString($variableValue);
                 $line = "{$variableType} => {$variableValue}";
                 break;
+            case 'array':
+                $this->processArray($variableValue, $key);
+                break;
+            case 'object':
+                $this->processObject($variableValue, $key);
+                break;
             case 'resource':
-                $this->processResource($variableValue);
+                $this->processResource($variableValue, $key);
                 break;
             default:
                 $serialize = serialize($variableValue);
@@ -174,24 +186,31 @@ abstract class BaseHandler
      * Iterate over an array and get all of its items.
      * 
      * @param array $array
+     * @param string $key
      * @return void
      */
-    private function processArray($array)
+    private function processArray($array, $key = '')
     {
+        $type = 'array';
+
+        if (!empty($key) || ($key === 0)) {
+            $type = "[{$key}] array";
+        }
+
         if (count($array)) {
            $this->output[] = $this->getIndentation() .
-                "array (" . count($array) . ") => [";
+                "{$type} (" . count($array) . ") => [";
         } else {
             $this->output[] = $this->getIndentation() .
-                 "array (" . count($array) . ") => []";
+                 "{$type} (" . count($array) . ") => []";
                 
             return;
         }
         
         $this->indentation += 4;
 
-        foreach ($array as $value) {
-            $this->process($value);
+        foreach ($array as $key => $value) {
+            $this->process($value, $key);
         }
 
         $this->indentation -= 4;
@@ -203,19 +222,26 @@ abstract class BaseHandler
      * Get resource's details.
      * 
      * @param resource $resource
+     * @param string $key
      * @return void
      */
-    private function processResource($resource)
+    private function processResource($resource, $key = '')
     {
+        $type = $resource;
+
+        if (!empty($key) || ($key === 0)) {
+            $type = "[{$key}] $resource";
+        }
+
         $resourceDetails = stream_get_meta_data($resource);
         $resourceDetails['options'] = stream_context_get_options($resource);
 
-        $this->output[] = $this->getIndentation() . "{$resource} => {";
+        $this->output[] = $this->getIndentation() . "{$type} => {";
 
         $this->indentation += 4;
 
-        foreach ($resourceDetails as $value) {
-            $this->process($value);
+        foreach ($resourceDetails as $key => $value) {
+            $this->process($value, $key);
         }
 
         $this->indentation -= 4;
@@ -227,9 +253,10 @@ abstract class BaseHandler
      * Get object's details.
      * 
      * @param object $object
+     * @param string $key
      * @return void
      */
-    private function processObject($object)
+    private function processObject($object, $key = '')
     {
         $className = get_class($object);
         $objectId = spl_object_id($object);
@@ -259,16 +286,27 @@ abstract class BaseHandler
             }
         }
 
+        $type = 'object';
+
+        if (!empty($key) || ($key === 0)) {
+            $type = "[{$key}] object";
+        }
+
         $this->output[] =  $this->getIndentation() . 
-            "object ({$className}) " . 
+            "{$type} ({$className}) " . 
             "#{$objectId} " .
             "(" . count($objectDetails) . ") " .
             "=> {";
     
         $this->indentation += 4;
 
-        foreach ($objectDetails as $value) {
-            $this->process($value);
+        foreach ($objectDetails as $key => $value) {
+            // handler private properties
+            if (preg_match("/{$className}/", $key)) {
+                $key = str_replace($className, '', $key) . ' (private)';
+            }
+
+            $this->process($value, $key);
         }
 
         $this->indentation -= 4;

@@ -28,9 +28,8 @@ class CliHandler extends BaseHandler
     public function flush()
     {
         foreach ($this->output as $line) {
-            if (strpos($line, 'object') !== false ||
-                strpos($line, 'array') !== false ||
-                strpos($line, 'Resource') !== false ||
+            if (strpos($line, '=> {') !== false ||
+                strpos($line, '=> [') !== false ||
                 $line === '}' ||
                 $line === ']'
             ) {
