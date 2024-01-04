@@ -72,7 +72,8 @@ if (!function_exists('dump_to_file')) {
         \VarDumper\Dumper::dump(
             \VarDumper\Dumper::VAR_DUMPER_OUTPUT_FILE,
             $vars,
-            debug_backtrace()
+            debug_backtrace(),
+            $path
         );
     }
 }

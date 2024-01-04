@@ -2,6 +2,8 @@
 
 namespace VarDumper\Handlers;
 
+use DateTime;
+
 /**
  * Base Handler Abstract Class
  */
@@ -85,7 +87,7 @@ abstract class BaseHandler
             case 'object':
                 $this->processObject($variableValue);
                 break;
-            case 'string':
+            case 'string':                
                 if (!(@preg_match($variableValue, '') === false)) {
                     $variableType = 'RegExp (' . strlen($variable) . ')';
                     $line = "{$variableType} => {$variableValue}";
@@ -98,9 +100,13 @@ abstract class BaseHandler
                 else if (filter_var($variableValue, FILTER_VALIDATE_EMAIL)) {
                     $variableType = 'Email (' . strlen($variable) . ')';
                 }
-                // else if (strtotime($variableValue) !== false) {
-                //     $variableType = 'Date/Time (' . strlen($variable) . ')';
-                // }
+                else if (strtotime($variableValue) !== false && (
+                    strpos($variableValue, '-') !== false ||
+                    strpos($variableValue, '/') !== false ||
+                    strpos($variableValue, ':') !== false
+                )) {
+                    $variableType = 'Date/Time (' . strlen($variable) . ')';
+                }
                 else {
                     $variableType = 'string (' . strlen($variable) . ')';
                 }

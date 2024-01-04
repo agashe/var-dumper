@@ -27,15 +27,41 @@ class FileHandler extends BaseHandler
         $this->filePath = $filePath;
     }
 
+    
     /**
-     * Dump an array of variables and return the output
-     * on the desired stream (Web / CLI / File).
+     * Append content to file.
      * 
-     * @param mixed $variable
+     * @param string $content
      * @return void
      */
-    public function getVariableDetails($variable)
+    private function write($content)
     {
-        
+        file_put_contents($this->filePath, $content, FILE_APPEND | LOCK_EX);
+    }
+    
+    /**
+     * Render the final output.
+     * 
+     * @return void
+     */
+    public function flush()
+    {
+        foreach ($this->output as $line) {
+            $this->write("$line \n");
+        }
+
+        $this->write("\n");
+    }
+
+    /**
+     *  Add the log header to the output.
+     * 
+     * @return void
+     */
+    public function header()
+    {
+        $this->write("[ {$this->headerInfo['logTime']} / " .
+            "{$this->headerInfo['fileName']} / " .
+            "{$this->headerInfo['lineNumber']} ] \n\n");
     }
 }
