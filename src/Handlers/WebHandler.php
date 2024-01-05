@@ -17,7 +17,9 @@ class WebHandler extends BaseHandler
         'group' => 'yellow',
         'type' => 'blue', 
         'value' => 'lime',
-        'arrow' => 'darkcyan'
+        'arrow' => 'darkcyan',
+        'border' => 'darkslategray',
+        'background' => 'black'
     ];
 
     /**
@@ -27,7 +29,15 @@ class WebHandler extends BaseHandler
      */
     public function flush()
     {
-        foreach ($this->output as $line) {
+        $lineStyle = [
+            'background-color: ' . $this->colors['background'],
+            'border-right: 5px solid ' . $this->colors['border'],
+            'border-left: 5px solid ' . $this->colors['border'],
+            'padding: 3px 10px',
+            'margin: 0px',
+        ];
+
+        foreach ($this->output as $i =>$line) {
             if (strpos($line, '=> {') !== false ||
                 strpos($line, '=> [') !== false ||
                 $line === '}' ||
@@ -48,7 +58,13 @@ class WebHandler extends BaseHandler
                 $line = $this->convertToHtml($line, $this->colors['value']);
             }
 
-            $this->print($line);
+            // for the last line we add the border-bottom style
+            if ($i == (count($this->output) - 1)) {
+                $lineStyle[] = 'border-bottom: 5px solid ' . 
+                    $this->colors['border'];
+            }
+
+            $this->print($line, $lineStyle);
         }
 
         print '<br>';
@@ -63,9 +79,17 @@ class WebHandler extends BaseHandler
     {
         $header = $this->convertToHtml("[ {$this->headerInfo['logTime']} / " .
             "{$this->headerInfo['fileName']} / " .
-            "{$this->headerInfo['lineNumber']} ]", $this->colors['header']);
+            "{$this->headerInfo['lineNumber']} ]", 
+            $this->colors['header']
+        );
 
-        $this->print($header);
+        $headerStyle = [
+            'background-color: ' . $this->colors['border'],
+            'padding: 3px 10px',
+            'margin: 0px'
+        ];
+
+        $this->print($header, $headerStyle);
     }
 
     /**
@@ -81,16 +105,15 @@ class WebHandler extends BaseHandler
     }
 
     /**
-     *  Print text in a <pre> HTML tag with some style.
+     *  Print text in a <pre> HTML tag with some inline style.
      * 
      * @param string $content
+     * @param array $style
      * @return void
      */
-    public function print($content)
+    public function print($content, $style = [])
     {
-        print '<pre ' . 
-            'style="background-color: black;padding: 3px 10px;margin: 0px;">' . 
-                $content . 
-            '</pre>';
+        $inlineStyle = !empty($style) ? implode(';', $style) : '';
+        print '<pre style="' . $inlineStyle . '">' . $content . '</pre>';
     }
 }
