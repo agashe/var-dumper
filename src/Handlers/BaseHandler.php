@@ -292,11 +292,21 @@ abstract class BaseHandler
             $type = "[{$key}] object";
         }
 
-        $this->output[] =  $this->getIndentation() . 
-            "{$type} ({$className}) " . 
-            "#{$objectId} " .
-            "(" . count($objectDetails) . ") " .
-            "=> {";
+        if (count($objectDetails)) {
+            $this->output[] =  $this->getIndentation() . 
+                "{$type} ({$className}) " . 
+                "#{$objectId} " .
+                "(" . count($objectDetails) . ") " .
+                "=> {";
+        } else {
+            $this->output[] =  $this->getIndentation() . 
+                "{$type} ({$className}) " . 
+                "#{$objectId} " .
+                "(" . count($objectDetails) . ") " .
+                "=> {}";
+
+            return;
+        }
     
         $this->indentation += 4;
 
