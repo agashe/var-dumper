@@ -26,13 +26,15 @@ if (!function_exists('dd')) {
      * @return void
      */
     function dd(...$vars) {
-        $outputType = \VarDumper\Dumper::VAR_DUMPER_OUTPUT_WEB;
+        $outputType = \VarDumper\Dumper::VAR_DUMPER_OUTPUT_CLI;
         
         if (php_sapi_name() !== 'cli') {
-            $outputType = \VarDumper\Dumper::VAR_DUMPER_OUTPUT_CLI;
+            $outputType = \VarDumper\Dumper::VAR_DUMPER_OUTPUT_WEB;
         
             // return HTTP 500 server error
-            header('HTTP/1.1 500 Internal Server Error');
+            if (!headers_sent()) {
+                header('HTTP/1.1 500 Internal Server Error');
+            }
         }
 
         \VarDumper\Dumper::dump($outputType, $vars, debug_backtrace());
