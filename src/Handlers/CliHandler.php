@@ -36,7 +36,7 @@ class CliHandler extends BaseHandler
                 $this->print($line . "\n", $this->colors['group']);
             } 
             else if (strpos($line, '=>') !== false) {
-                $parts = explode('=>', $line);
+                $parts = explode('=>', $line, 2);
     
                 $this->print($parts[0], $this->colors['type']);
                 $this->print("=>", $this->colors['arrow']);
@@ -51,7 +51,7 @@ class CliHandler extends BaseHandler
     }
 
     /**
-     *  Add the log header to the output.
+     * Add the log header to the output.
      * 
      * @return void
      */

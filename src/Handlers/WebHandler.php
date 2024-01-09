@@ -50,7 +50,7 @@ class WebHandler extends BaseHandler
         $parent = '';
         $displayStyle = '';
 
-        foreach ($this->output as $i =>$line) {
+        foreach ($this->output as $i => $line) {
             // for the last line we add the border-bottom style
             if ($i == (count($this->output) - 1)) {
                 $lineStyle[] = 'border-bottom: 5px solid ' . 
@@ -76,7 +76,7 @@ class WebHandler extends BaseHandler
                     $parent = $blocks[count($blocks) - 1];
                 }
 
-                // generate unique eky for the block
+                // generate unique key for the block
                 $key = substr(md5($line . rand(1, 1000)), 0, 7);
                 $blocks[] = $key;
 
@@ -167,7 +167,7 @@ class WebHandler extends BaseHandler
     }
 
     /**
-     *  Add the log header to the output.
+     * Add the log header to the output.
      * 
      * @return void
      */

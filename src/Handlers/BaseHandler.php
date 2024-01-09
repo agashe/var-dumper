@@ -314,6 +314,9 @@ abstract class BaseHandler implements HandlerInterface
         $this->indentation += 4;
 
         foreach ($objectDetails as $key => $value) {
+            // handle PHP special character
+            $key = strval(str_replace(["*", "\u0000", "\0"], '', $key));
+
             // handler private properties
             if (preg_match("/{$className}/", $key)) {
                 $key = str_replace($className, '', $key) . ' (private)';
