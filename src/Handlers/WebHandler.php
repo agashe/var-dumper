@@ -45,13 +45,18 @@ class WebHandler extends BaseHandler
 
         // we use this variable to generate key property in order
         // to match the open/close brackets for the folding
-
         $blocks = [];
         $key = '';
         $parent = '';
         $displayStyle = '';
 
         foreach ($this->output as $i =>$line) {
+            // for the last line we add the border-bottom style
+            if ($i == (count($this->output) - 1)) {
+                $lineStyle[] = 'border-bottom: 5px solid ' . 
+                    $this->colors['border'];
+            }
+
             if (strpos($line, '=> {}') !== false ||
                 strpos($line, '=> []') !== false
             ) {
@@ -60,78 +65,74 @@ class WebHandler extends BaseHandler
             else if (strpos($line, '=> {') !== false ||
                 strpos($line, '=> [') !== false
             ) {
+                $line = $this->convertToHtml($line, $this->colors['group']);
+                $displayStyle = $lineStyle;
+
+                // we set the parent key to make the folding easier , we
+                // make like grouping for the items , so when we iterate we
+                // check for the parent key , to decide either we fold or not
                 $parent = '';
                 if (isset($blocks[count($blocks) - 1])) {
                     $parent = $blocks[count($blocks) - 1];
                 }
 
+                // generate unique eky for the block
                 $key = substr(md5($line . rand(1, 1000)), 0, 7);
                 $blocks[] = $key;
 
-                $line = $this->convertToHtml($line, $this->colors['group']);
-
-                // for folded lines we add the "display : none" style 
-                // property
-                $displayStyle = (count($blocks) <= 2) ? 'display: block' :
-                    'display: none';
-
-                // for the last line we add the border-bottom style
-                if ($i == (count($this->output) - 1)) {
-                    $lineStyle[] = 'border-bottom: 5px solid ' . 
-                        $this->colors['border'];
-                }
+                // for folded lines we add the "display : none" style property
+                $displayStyle[] = (count($blocks) <= 2) ? 
+                    'display: block' : 'display: none';
 
                 // set cursor to pointer for the open tag
+                $displayStyle[] = 'cursor: pointer;';
+
                 $this->print(
-                    $line,
-                    array_merge($lineStyle, [
-                        'cursor: pointer;', 
-                        $displayStyle
-                    ]),
-                    $key,
-                    $parent,
-                    true,
-                    (count($blocks) > 1)
+                    $line, // the html tag
+                    $displayStyle, // the final style with all adjustments
+                    $key, // the current block key
+                    $parent, // the parent block key (if exists!)
+                    true, // add control function for the start tag
+                    (count($blocks) > 1) // default value for the fold
                 );
 
                 continue;
             } 
             else if (trim($line) === '}' || trim($line) === ']') {
                 $line = $this->convertToHtml($line, $this->colors['group']);
-                
+                $displayStyle = $lineStyle;
+
+                // we take the key before the current one as 
+                // parent for the closing bracket 
                 $parent = '';
                 if (isset($blocks[count($blocks) - 2])) {
                     $parent = $blocks[count($blocks) - 2];
                 }
 
                 if (isset($blocks[count($blocks) - 1])) {                    
-                    // for folded lines we add the "display : none" style 
-                    // property
-                    $displayStyle = (count($blocks) <= 2) ? 'display: block' :
-                        'display: none';
-
-                    // for the last line we add the border-bottom style
-                    if ($i == (count($this->output) - 1)) {
-                        $lineStyle[] = 'border-bottom: 5px solid ' . 
-                            $this->colors['border'];
-                    }
+                    // for folded lines we add the "display : none" 
+                    // style property
+                    $displayStyle[] = (count($blocks) <= 2) ?
+                        'display: block' : 'display: none';
 
                     $key = $blocks[count($blocks) - 1];
                     
                     $this->print(
-                        $line,
-                        array_merge($lineStyle, [$displayStyle]),
-                        $key,
-                        $parent,
-                        false,
-                        false,
-                        true
+                        $line, // the html tag
+                        $displayStyle, // the final style with all adjustments
+                        $key, // the current block key
+                        $parent, // the parent block key (if exists!)
+                        false, // no control function for the close tag
+                        false, // since no control , so no folding mechanism
+                        true // mark the line as closing bracket for the group
                     );
 
+                    // remove the current key , since the block is over
                     unset($blocks[count($blocks) - 1]);
                     $blocks = array_values($blocks);
 
-                    // get the last key
+                    // get the last key , since we might be still  
+                    // looping in a parent block
                     $key = isset($blocks[count($blocks) - 1]) ?
                         $blocks[count($blocks) - 1] : '';
 
@@ -157,86 +158,10 @@ class WebHandler extends BaseHandler
                     'display: none';
             }
 
-            // for the last line we add the border-bottom style
-            if ($i == (count($this->output) - 1)) {
-                $lineStyle[] = 'border-bottom: 5px solid ' . 
-                    $this->colors['border'];
-            }
-
             $this->print($line, $lineStyle, $key);
         }
 
-        // print the folding script
-        print <<<JS
-            <script>
-                function toggleFold(el) {
-                    let key = el.getAttribute("data-key");
-                    let next = el.nextElementSibling;
-                    let loop = true;
-                    
-                    while (loop) {
-                        if (el.getAttribute("data-fold-to") == 'block') {
-                            if (next.getAttribute("data-key") == key ||
-                                next.getAttribute('data-parent-key') == key
-                            ) {
-                                next.style.display = 'block';
-                            } else {
-                                if (!next.hasAttribute("data-key")) {
-                                    next.style.display = 'none';
-                                } else {
-                                    if (next.getAttribute('data-parent-key') == key) {
-                                        next.style.display = 'block';
-                                    } else {
-                                        next.style.display = 'none';
-                                    }
-                                }
-                            }
-                        } else {
-                            if (next.getAttribute("data-key") == key) {
-                                next.style.display = 'block';
-                            } else {
-                                next.style.display = 'none';
-                            }
-                        }
-
-                        if (next.getAttribute("data-key") == key) {
-                            break;
-                        }
-
-                        next = next.nextElementSibling
-                    }
-
-                    el.setAttribute("data-fold-to", 
-                        el.getAttribute("data-fold-to") == 'block' ?
-                        "none" : "block"
-                    );
-                }
-
-                function addUnderline(el) {
-                    let node = (!el.childNodes[0].childNodes[1]) ?
-                        el.childNodes[0].childNodes[0] : 
-                        el.childNodes[0].childNodes[1];
-
-                    node.style.textDecoration = 'underline';
-                    node.style.textDecorationSkipInk = 'none';
-                }
-
-                function removeUnderline(el) {
-                    let node = (!el.childNodes[0].childNodes[1]) ?
-                        el.childNodes[0].childNodes[0] : 
-                        el.childNodes[0].childNodes[1];
-                    
-                    node.style.textDecoration = 'none';
-                }
-
-                function toggleTextFold(el) {
-                    let currentText = el.innerText;
-                    console.log(el.getAttribute("data-text"));
-                    el.innerText = el.getAttribute("data-text");
-                    el.setAttribute("data-text", currentText);
-                }
-            </script>
-        JS;
+        $this->addControlScripts();
 
         print '<br>';
     }
@@ -283,7 +208,7 @@ class WebHandler extends BaseHandler
         // handle long text by adding fold functionality
         if (strlen($text) > 150) {
             $tag = "<span style=\"cursor: pointer\" " . 
-                'data-text=' . $text . '' .
+                'data-text=' . $text . ' ' .
                 "onclick=\"toggleTextFold(this);\">" .
                 substr($text, 0, 150) . "...\"</span>";
 
@@ -345,5 +270,90 @@ class WebHandler extends BaseHandler
         }
 
         print '<pre style="' . $inlineStyle . '">' . $content . '</pre>';
+    }
+
+    /**
+     * Print the JS script for folding objects , arrays 
+     * and long text .
+     * 
+     * @return void
+     */
+    private function addControlScripts() {
+        print <<<JS
+            <script>
+                function toggleFold(el) {
+                    let key = el.getAttribute("data-key");
+                    let next = el.nextElementSibling;
+                    let loop = true;
+                    
+                    while (loop) {
+                        if (el.getAttribute("data-fold-to") == 'block') {
+                            if (next.getAttribute("data-key") == key ||
+                                next.getAttribute('data-parent-key') == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                if (!next.hasAttribute("data-key")) {
+                                    next.style.display = 'none';
+                                } else {
+                                    if (next.getAttribute('data-parent-key') 
+                                        == key
+                                    ) {
+                                        next.style.display = 'block';
+                                    } else {
+                                        next.style.display = 'none';
+                                    }
+                                }
+                            }
+                        } else {
+                            if (next.getAttribute("data-key") == key) {
+                                next.style.display = 'block';
+                            } else {
+                                if (next.hasAttribute("data-key")) {
+                                    next.setAttribute('data-fold-to', 'block');
+                                }
+
+                                next.style.display = 'none';
+                            }
+                        }
+
+                        if (next.getAttribute("data-key") == key) {
+                            break;
+                        }
+
+                        next = next.nextElementSibling
+                    }
+
+                    el.setAttribute("data-fold-to", 
+                        el.getAttribute("data-fold-to") == 'block' ?
+                        "none" : "block"
+                    );
+                }
+
+                function addUnderline(el) {
+                    let node = (!el.childNodes[0].childNodes[1]) ?
+                        el.childNodes[0].childNodes[0] : 
+                        el.childNodes[0].childNodes[1];
+
+                    node.style.textDecoration = 'underline';
+                    node.style.textDecorationSkipInk = 'none';
+                }
+
+                function removeUnderline(el) {
+                    let node = (!el.childNodes[0].childNodes[1]) ?
+                        el.childNodes[0].childNodes[0] : 
+                        el.childNodes[0].childNodes[1];
+                    
+                    node.style.textDecoration = 'none';
+                }
+
+                function toggleTextFold(el) {
+                    let currentText = el.innerText;
+                    
+                    el.innerText = el.getAttribute("data-text");
+                    el.setAttribute("data-text", currentText);
+                }
+            </script>
+        JS;
     }
 }
