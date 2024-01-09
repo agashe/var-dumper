@@ -2,12 +2,12 @@
 
 namespace VarDumper\Handlers;
 
-use DateTime;
+use VarDumper\Interfaces\HandlerInterface;
 
 /**
  * Base Handler Abstract Class
  */
-abstract class BaseHandler
+abstract class BaseHandler implements HandlerInterface
 {
     /**
      * @var array $output

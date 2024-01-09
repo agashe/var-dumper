@@ -2,14 +2,15 @@
 
 namespace VarDumper;
 
+use VarDumper\Interfaces\DumperInterface;
 use VarDumper\Handlers\CliHandler;
 use VarDumper\Handlers\WebHandler;
 use VarDumper\Handlers\FileHandler;
 
 /**
- * Var Dumper class
+ * Var Dumper Class
  */
-class Dumper
+class Dumper implements DumperInterface
 {
     /**
      * @var string VarDumper output types
