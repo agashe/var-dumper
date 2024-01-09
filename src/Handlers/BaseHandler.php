@@ -98,6 +98,9 @@ abstract class BaseHandler implements HandlerInterface
 
                     break;
                 }
+                else if (@unserialize($variableValue) !== false) {
+                    $variableType = 'Serializable (' . strlen($variable) . ')';
+                }
                 else if (filter_var($variableValue, FILTER_VALIDATE_URL)) {
                     $variableType = 'URL (' . strlen($variable) . ')';
                 }
