@@ -86,60 +86,7 @@ object (Foo) #5 (4) => {
             [ahmed] array (0) => [] 
         ] 
     } 
-} 
-
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 72 ] 
-
-object (Exception) #7 (7) => { 
-    message => "Hello" 
-    string (private) => "" 
-    code => 0 
-    file => "results.txt" 
-    line => 115
-    [trace (private)] array (6) => [
-        [0] array (5) => [
-            file => "results.txt"
-            line => 1612
-            function => "testDump"
-            class => "DumperTest"
-            type => "->"
-        ]
-        [1] array (5) => [
-            file => "results.txt"
-            line => 1218
-            function => "runTest"
-            class => "PHPUnit\Framework\TestCase"
-            type => "->"
-        ]
-        [2] array (5) => [
-            file => "results.txt"
-            line => 728
-            function => "runBare"
-            class => "PHPUnit\Framework\TestCase"
-            type => "->"
-        ]
-        [3] array (5) => [
-            file => "results.txt"
-            line => 968
-            function => "run"
-            class => "PHPUnit\Framework\TestResult"
-            type => "->"
-        ]
-        [4] array (5) => [
-            file => "Standard input code"
-            line => 320
-            function => "run"
-            class => "PHPUnit\Framework\TestCase"
-            type => "->"
-        ]
-        [5] array (3) => [
-            file => "Standard input code"
-            line => 478
-            function => "__phpunit_run_isolated_test"
-        ]
-    ]
-    previous (private) => NULL 
-} 
+}
 
 [ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 76 ] 
 

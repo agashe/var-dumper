@@ -1,6 +1,7 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use VarDumper\Dumper;
 
 /**
  * Var Dumper Test
@@ -46,9 +47,9 @@ class DumperTest extends TestCase
             );
 
             if (trim($results[$i]) != trim($validResults[$i])) {
-                print $i . PHP_EOL;
-                print trim($results[$i]) . PHP_EOL;
-                print trim($validResults[$i]) . PHP_EOL;
+                // print $i . PHP_EOL;
+                // print trim($results[$i]) . PHP_EOL;
+                // print trim($validResults[$i]) . PHP_EOL;
                 return false;
             }
         }
@@ -111,12 +112,6 @@ class DumperTest extends TestCase
 
         dump($foo);
 
-        try {
-            throw new \Exception('Hello');
-        } catch (\Exception $e) {
-            dump($e);
-        }
-
         // test anonymous class
         dump(
             new class
@@ -160,27 +155,40 @@ class DumperTest extends TestCase
     }
 
     /**
-     * test dumper will throw exception if no variables were provided.
+     * Test dumper will throw exception if output type is invalid.
+     *
+     * @runInSeparateProcess
+     * @return void
+     */
+    public function testDumperWillThrowExceptionIfOutputTypeIsInvalid()
+    {
+        $this->expectException(\InvalidArgumentException::class);
+
+        \VarDumper\Dumper::dump('', '', '');
+    }
+
+    /**
+     * Test dumper will throw exception if no variables were provided.
      *
      * @runInSeparateProcess
      * @return void
      */
     public function testDumperWillThrowExceptionIfNoVariablesWereProvided()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         d();
     }
 
     /**
-     * test dumper will throw exception if the dump file is not found.
+     * Test dumper will throw exception if the dump file is not found.
      *
      * @runInSeparateProcess
      * @return void
      */
     public function testDumperWillThrowExceptionIfTheDumpFileIsNotFound()
     {
-        $this->expectException(\Exception::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         dump_to_file("unknown_file");
     }
