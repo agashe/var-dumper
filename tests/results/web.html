@@ -1,0 +1,1242 @@
+<pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 8 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: royalblue;"><span>string (5)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"ahmed"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: royalblue;"><span>double</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>5.6</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: royalblue;"><span>boolean</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>false</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: royalblue;"><span>string (5)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"world"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: lightgreen;"><span>NULL</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 9 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: royalblue;"><span>RegExp (17)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>/^([A-Za-z1-9])$/</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 10 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: royalblue;"><span>Serializable (30)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 11 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: royalblue;"><span>URL (25)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"http://www.helloworld.com"</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 12 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: royalblue;"><span>Email (16)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"test@example.com"</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 13 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: royalblue;"><span>Date/Time (9)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"20-5-1995"</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 14 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="c28e3dd" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>Resource id #15 => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>timed_out</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>false</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>blocked</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>true</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>eof</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>false</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>wrapper_type</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"plainfile"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>stream_type</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"STDIO"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>mode</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"r"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>unread_bytes</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>0</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>seekable</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>true</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: royalblue;">    <span>uri</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"/home/mohamed/Projects/var-dumper/tests/results.txt"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block" data-parent-key="c28e3dd"><b style="color: gold;">    <span>[options] array (0) => []</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block;display: block;border-bottom: 5px solid darkslategray;display: block" data-key="c28e3dd" data-parent-key=""><b style="color: gold;"><span>}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 17 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="983323d" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>array (3) => [</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="983323d"><b style="color: royalblue;">    <span>0</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>1</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block" data-parent-key="983323d"><b style="color: royalblue;">    <span>1</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>2</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block" data-parent-key="983323d"><b style="color: royalblue;">    <span>2</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>3</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;border-bottom: 5px solid darkslategray;display: block" data-key="983323d" data-parent-key=""><b style="color: gold;"><span>]</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 20 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: gold;"><span>object (stdClass) #2 (0) => {}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 23 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="fdc2559" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>object (DateTime) #2 (3) => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="fdc2559"><b style="color: royalblue;">    <span>Date/Time (26)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"1995-05-20 12:28:14.000000"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block" data-parent-key="fdc2559"><b style="color: royalblue;">    <span>timezone_type</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>3</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block" data-parent-key="fdc2559"><b style="color: royalblue;">    <span>timezone</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"UTC"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;border-bottom: 5px solid darkslategray;display: block" data-key="fdc2559" data-parent-key=""><b style="color: gold;"><span>}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 79 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="3d9ff97" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>object (Foo) #5 (4) => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="3d9ff97"><b style="color: royalblue;">    <span>name</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>NULL</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block" data-parent-key="3d9ff97"><b style="color: royalblue;">    <span>age (private)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>NULL</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;cursor: pointer;" data-key="7a148bc" data-parent-key="3d9ff97" data-fold-to="block"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;">    <span>[arr] object (class@anonymous) #6 (1) => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none" data-parent-key="7a148bc"><b style="color: royalblue;">        <span>name</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"ahmed"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: block" data-key="7a148bc" data-parent-key="3d9ff97"><b style="color: gold;">    <span>}</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: block;cursor: pointer;" data-key="2cdfe6b" data-parent-key="3d9ff97" data-fold-to="block"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;">    <span>[bar] object (Bar) #4 (1) => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;cursor: pointer;" data-key="aba8eca" data-parent-key="2cdfe6b" data-fold-to="block"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;">        <span>[arr] array (5) => [</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none" data-parent-key="aba8eca"><b style="color: royalblue;">            <span>a</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"apple"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none" data-parent-key="aba8eca"><b style="color: royalblue;">            <span>b</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"banana"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;cursor: pointer;" data-key="04993bf" data-parent-key="aba8eca" data-fold-to="block"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;">            <span>[c] array (3) => [</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none" data-parent-key="04993bf"><b style="color: royalblue;">                <span>0</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>1</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none" data-parent-key="04993bf"><b style="color: royalblue;">                <span>1</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>2</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;cursor: pointer;" data-key="f4c16cb" data-parent-key="04993bf" data-fold-to="block"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;">                <span>[2] array (3) => [</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none" data-parent-key="f4c16cb"><b style="color: royalblue;">                    <span>0</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>1</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none" data-parent-key="f4c16cb"><b style="color: royalblue;">                    <span>1</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>2</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none" data-parent-key="f4c16cb"><b style="color: royalblue;">                    <span>2</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>3</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none" data-key="f4c16cb" data-parent-key="04993bf"><b style="color: gold;">                <span>]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none" data-key="04993bf" data-parent-key="aba8eca"><b style="color: gold;">            <span>]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none" data-parent-key="aba8eca"><b style="color: royalblue;">            <span>d</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"dates"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none" data-parent-key="aba8eca"><b style="color: gold;">            <span>[ahmed] array (0) => []</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none" data-key="aba8eca" data-parent-key="2cdfe6b"><b style="color: gold;">        <span>]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: block" data-key="2cdfe6b" data-parent-key="3d9ff97"><b style="color: gold;">    <span>}</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;display: none;border-bottom: 5px solid darkslategray;display: block" data-key="3d9ff97" data-parent-key=""><b style="color: gold;"><span>}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 82 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="fa2de96" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>object (class@anonymous) #7 (1) => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="fa2de96"><b style="color: royalblue;">    <span>name</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"ahmed"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;border-bottom: 5px solid darkslategray;display: block" data-key="fa2de96" data-parent-key=""><b style="color: gold;"><span>}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 99 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="9bb36b7" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>object (Closure) #7 (2) => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="9bb36b7"><b style="color: royalblue;">    <span>name</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"required"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block" data-parent-key="9bb36b7"><b style="color: royalblue;">    <span>age</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"optional"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;border-bottom: 5px solid darkslategray;display: block" data-key="9bb36b7" data-parent-key=""><b style="color: gold;"><span>}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 100 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: gold;"><span>object (Closure) #8 (0) => {}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 103 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="ca11985" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>object (Week) #8 (1) => {</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="ca11985"><b style="color: royalblue;">    <span>name</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"Saturday"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;border-bottom: 5px solid darkslategray;display: block" data-key="ca11985" data-parent-key=""><b style="color: gold;"><span>}</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 106 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;cursor: pointer;" data-key="4b45177" data-parent-key="" data-fold-to="none"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;"><span>array (5) => [</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block" data-parent-key="4b45177"><b style="color: royalblue;">    <span>a</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"apple"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block" data-parent-key="4b45177"><b style="color: royalblue;">    <span>b</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"banana"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: block;cursor: pointer;" data-key="87c1ca4" data-parent-key="4b45177" data-fold-to="block"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;">    <span>[c] array (3) => [</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none" data-parent-key="87c1ca4"><b style="color: royalblue;">        <span>0</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>1</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none" data-parent-key="87c1ca4"><b style="color: royalblue;">        <span>1</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>2</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;cursor: pointer;" data-key="6ff93cf" data-parent-key="87c1ca4" data-fold-to="block"onclick="toggleFold(this)" onmouseover="addUnderline(this)" onmouseout="removeUnderline(this)"><b style="color: gold;">        <span>[2] array (3) => [</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none" data-parent-key="6ff93cf"><b style="color: royalblue;">            <span>0</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>1</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none" data-parent-key="6ff93cf"><b style="color: royalblue;">            <span>1</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>2</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none" data-parent-key="6ff93cf"><b style="color: royalblue;">            <span>2</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>3</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: none" data-key="6ff93cf" data-parent-key="87c1ca4"><b style="color: gold;">        <span>]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: block" data-key="87c1ca4" data-parent-key="4b45177"><b style="color: gold;">    <span>]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: block" data-parent-key="4b45177"><b style="color: royalblue;">    <span>d</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span>"dates"</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: block;display: block" data-parent-key="4b45177"><b style="color: gold;">    <span>[arr] array (0) => []</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;display: block;display: block;display: none;display: none;display: none;display: none;display: none;display: block;display: block;border-bottom: 5px solid darkslategray;display: block" data-key="4b45177" data-parent-key=""><b style="color: gold;"><span>]</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br><pre style="background-color: darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word"><b style="color: darkorange;"><span>[ Time : 10-01-2024 07:43:18 / File : d.php / Line : 116 ]</span></b></pre><pre style="background-color: black;border-right: 5px solid darkslategray;border-left: 5px solid darkslategray;padding: 3px 10px;margin: 0px;overflow-x: auto;white-space: pre-wrap;white-space: -moz-pre-wrap;white-space: -pre-wrap;white-space: -o-pre-wrap;word-wrap: break-word;border-bottom: 5px solid darkslategray"><b style="color: royalblue;"><span>string (550)</span> </b><b style="color: darkcyan;"><span>=></span></b><b style="color: lightgreen;"> <span style="cursor: pointer" data-text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla in. " onclick="toggleTextFold(this);">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas s..."</span></b></pre>    <script>
+        function toggleFold(el) {
+            let key = el.getAttribute("data-key");
+            let next = el.nextElementSibling;
+            let loop = true;
+            
+            while (loop) {
+                if (el.getAttribute("data-fold-to") == 'block') {
+                    if (next.getAttribute("data-key") == key ||
+                        next.getAttribute('data-parent-key') == key
+                    ) {
+                        next.style.display = 'block';
+                    } else {
+                        if (!next.hasAttribute("data-key")) {
+                            next.style.display = 'none';
+                        } else {
+                            if (next.getAttribute('data-parent-key') 
+                                == key
+                            ) {
+                                next.style.display = 'block';
+                            } else {
+                                next.style.display = 'none';
+                            }
+                        }
+                    }
+                } else {
+                    if (next.getAttribute("data-key") == key) {
+                        next.style.display = 'block';
+                    } else {
+                        if (next.hasAttribute("data-key")) {
+                            next.setAttribute('data-fold-to', 'block');
+                        }
+
+                        next.style.display = 'none';
+                    }
+                }
+
+                if (next.getAttribute("data-key") == key) {
+                    break;
+                }
+
+                next = next.nextElementSibling
+            }
+
+            el.setAttribute("data-fold-to", 
+                el.getAttribute("data-fold-to") == 'block' ?
+                "none" : "block"
+            );
+        }
+
+        function addUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+
+            node.style.textDecoration = 'underline';
+            node.style.textDecorationSkipInk = 'none';
+        }
+
+        function removeUnderline(el) {
+            let node = (!el.childNodes[0].childNodes[1]) ?
+                el.childNodes[0].childNodes[0] : 
+                el.childNodes[0].childNodes[1];
+            
+            node.style.textDecoration = 'none';
+        }
+
+        function toggleTextFold(el) {
+            let currentText = el.innerText;
+            
+            el.innerText = el.getAttribute("data-text");
+            el.setAttribute("data-text", currentText);
+        }
+    </script><br>

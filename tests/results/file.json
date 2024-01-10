@@ -1,0 +1,238 @@
+{
+    "dump_8ca4535": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 8
+        },
+        "data": {
+            "string (5)": "world",
+            "double": 5.6,
+            "boolean": "false",
+            "value": null
+        }
+    },
+    "dump_e19076d": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 9
+        },
+        "data": {
+            "RegExp (17)": "\/^([A-Za-z1-9])$\/"
+        }
+    },
+    "dump_bcbcc01": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 10
+        },
+        "data": {
+            "Serializable (30)": "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
+        }
+    },
+    "dump_4f03475": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 11
+        },
+        "data": {
+            "URL (25)": "http:\/\/www.helloworld.com"
+        }
+    },
+    "dump_061455e": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 12
+        },
+        "data": {
+            "Email (16)": "test@example.com"
+        }
+    },
+    "dump_5ed4172": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 13
+        },
+        "data": {
+            "Date\/Time (9)": "20-5-1995"
+        }
+    },
+    "dump_3a6de90": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 14
+        },
+        "data": {
+            "Resource id #29": {
+                "timed_out": "false",
+                "blocked": "true",
+                "eof": "false",
+                "wrapper_type": "plainfile",
+                "stream_type": "STDIO",
+                "mode": "r",
+                "unread_bytes": 0,
+                "seekable": "true",
+                "uri": "\/home\/mohamed\/Projects\/var-dumper\/tests\/results.txt",
+                "[options] array (0)": {}
+            }
+        }
+    },
+    "dump_2c37ecf": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 17
+        },
+        "data": {
+            "array (3)": {
+                "0": 1,
+                "1": 2,
+                "2": 3
+            }
+        }
+    },
+    "dump_397d2ec": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 20
+        },
+        "data": {
+            "object (stdClass) #2 (0)": {}
+        }
+    },
+    "dump_33dd311": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 23
+        },
+        "data": {
+            "object (DateTime) #2 (3)": {
+                "Date\/Time (26)": "1995-05-20 12:28:14.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    },
+    "dump_4c7e12d": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 79
+        },
+        "data": {
+            "object (Foo) #5 (4)": {
+                "name": "NULL",
+                "age (private)": "NULL",
+                "[arr] object (class@anonymous) #6 (1)": {
+                    "name": "ahmed"
+                },
+                "[bar] object (Bar) #4 (1)": {
+                    "[arr] array (5)": {
+                        "a": "apple",
+                        "b": "banana",
+                        "[c] array (3)": {
+                            "0": 1,
+                            "1": 2,
+                            "[2] array (3)": {
+                                "0": 1,
+                                "1": 2,
+                                "2": 3
+                            }
+                        },
+                        "d": "dates",
+                        "[ahmed] array (0)": {}
+                    }
+                }
+            }
+        }
+    },
+    "dump_92dfef7": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 82
+        },
+        "data": {
+            "object (class@anonymous) #7 (1)": {
+                "name": "ahmed"
+            }
+        }
+    },
+    "dump_0588b2c": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 99
+        },
+        "data": {
+            "object (Closure) #7 (2)": {
+                "name": "required",
+                "age": "optional"
+            }
+        }
+    },
+    "dump_6234986": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 100
+        },
+        "data": {
+            "object (Closure) #8 (0)": {}
+        }
+    },
+    "dump_a11e1dd": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 103
+        },
+        "data": {
+            "object (Week) #8 (1)": {
+                "name": "Saturday"
+            }
+        }
+    },
+    "dump_155d34f": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 106
+        },
+        "data": {
+            "array (5)": {
+                "a": "apple",
+                "b": "banana",
+                "[c] array (3)": {
+                    "0": 1,
+                    "1": 2,
+                    "[2] array (3)": {
+                        "0": 1,
+                        "1": 2,
+                        "2": 3
+                    }
+                },
+                "d": "dates",
+                "[arr] array (0)": {}
+            }
+        }
+    },
+    "dump_d080964": {
+        "timestamp": {
+            "time": "10-01-2024 08:05:03",
+            "file": "d.php",
+            "line": 116
+        },
+        "data": {
+            "string (550)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla in."
+        }
+    }
+}
