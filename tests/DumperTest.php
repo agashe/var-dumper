@@ -75,9 +75,6 @@ class DumperTest extends TestCase
             );
 
             if (trim($results[$i]) != trim($validResults[$i])) {
-                print $i . PHP_EOL;
-                print trim($results[$i]) . PHP_EOL;
-                print trim($validResults[$i]) . PHP_EOL;
                 return false;
             }
         }
@@ -239,6 +236,9 @@ class DumperTest extends TestCase
                 file_get_contents(__DIR__ . "/results/file.txt")
             )
         );
+
+        // clear output file
+        file_put_contents(__DIR__ . "/output/file.txt", "");
     }
 
     /**
@@ -251,7 +251,7 @@ class DumperTest extends TestCase
     {
         // clear output file
         file_put_contents(__DIR__ . "/output/file.json", "");
-        
+
         $this->runDumper($this->getDumpFunction('json'));
 
         $this->assertTrue(
@@ -260,6 +260,9 @@ class DumperTest extends TestCase
                 file_get_contents(__DIR__ . "/results/file.json")
             )
         );
+
+        // clear output file
+        file_put_contents(__DIR__ . "/output/file.json", "");
     }
 
     /**
