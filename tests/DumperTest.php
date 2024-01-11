@@ -225,9 +225,6 @@ class DumperTest extends TestCase
      */
     public function testDumpFile()
     {
-        // clear output file
-        file_put_contents(__DIR__ . "/output/file.txt", "");
-
         $this->runDumper($this->getDumpFunction('file'));
 
         $this->assertTrue(
@@ -249,9 +246,6 @@ class DumperTest extends TestCase
      */
     public function testDumpJsonFile()
     {
-        // clear output file
-        file_put_contents(__DIR__ . "/output/file.json", "");
-
         $this->runDumper($this->getDumpFunction('json'));
 
         $this->assertTrue(
