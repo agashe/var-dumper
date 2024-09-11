@@ -174,7 +174,7 @@ class DumperTest extends TestCase
 
         // test long text
         // THIS LINE IS EXCEPTION FOR THE 80 CHARACTERS RULE :(
-        $dumper("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla in.");
+        $dumper("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla inn.");
     }
 
     /**

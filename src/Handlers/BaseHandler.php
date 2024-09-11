@@ -92,7 +92,7 @@ abstract class BaseHandler implements HandlerInterface
 
                 break;
             case 'string':                
-                if (!(@preg_match($variableValue, '') === false)) {
+                if (preg_match("/^\/[\s\S]+\/$/", $variableValue) !== 0) {
                     $variableType = 'RegExp (' . strlen($variable) . ')';
                     $line = "{$variableType} => {$variableValue}";
 
