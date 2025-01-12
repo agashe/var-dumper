@@ -1,134 +1,140 @@
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 8 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 96 ] 
 
-string (5) => "ahmed" 
-double => 5.6 
-boolean => false 
-string (5) => "world" 
-NULL 
+string (5) => "ahmed"
+double => 5.6
+boolean => false
+string (5) => "world"
+NULL
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 9 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 97 ] 
 
-RegExp (17) => /^([A-Za-z1-9])$/ 
+RegExp (17) => /^([A-Za-z1-9])$/
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 10 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 98 ] 
 
-Serializable (30) => "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}" 
+Serializable (30) => "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 11 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 99 ] 
 
-URL (25) => "http://www.helloworld.com" 
+URL (25) => "http://www.helloworld.com"
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 12 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 100 ] 
 
-Email (16) => "test@example.com" 
+Email (16) => "test@example.com"
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 13 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 101 ] 
 
-Date/Time (9) => "20-5-1995" 
+Date/Time (9) => "20-5-1995"
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 14 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 102 ] 
 
-Resource id #39 => { 
-    timed_out => false 
-    blocked => true 
-    eof => false 
-    wrapper_type => "plainfile" 
-    stream_type => "STDIO" 
-    mode => "r" 
-    unread_bytes => 0 
-    seekable => true 
-    uri => "results.php" 
-    [options] array (0) => [] 
-} 
-
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 17 ] 
-
-array (3) => [ 
-    0 => 1 
-    1 => 2 
-    2 => 3 
-] 
-
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 20 ] 
-
-object (stdClass) #2 (0) => {} 
-
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 23 ] 
-
-object (DateTime) #2 (3) => { 
-    Date/Time (26) => "1995-05-20 12:28:14.000000" 
-    timezone_type => 3 
-    timezone => "UTC" 
-} 
-
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 67 ] 
-
-object (Foo) #5 (4) => { 
-    name => NULL 
-    age (private) => NULL 
-    [arr] object (class@anonymous) #6 (1) => { 
-        name => "ahmed" 
-    } 
-    [bar] object (Bar) #4 (1) => { 
-        [arr] array (5) => [ 
-            a => "apple" 
-            b => "banana" 
-            [c] array (3) => [ 
-                0 => 1 
-                1 => 2 
-                [2] array (3) => [ 
-                    0 => 1 
-                    1 => 2 
-                    2 => 3 
-                ] 
-            ] 
-            d => "dates" 
-            [ahmed] array (0) => [] 
-        ] 
-    } 
+Resource id #33 => {
+    timed_out => false
+    blocked => true
+    eof => false
+    wrapper_type => "plainfile"
+    stream_type => "STDIO"
+    mode => "r"
+    unread_bytes => 0
+    seekable => true
+    uri => "/home/mohamed/Projects/var-dumper/tests/results/cli.txt"
+    [options] array (0) => []
 }
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 76 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 105 ] 
 
-object (class@anonymous) #8 (1) => { 
-    name => "ahmed" 
-} 
+array (3) => [
+    0 => 1
+    1 => 2
+    2 => 3
+]
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 92 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 108 ] 
 
-object (Closure) #8 (2) => { 
-    name => "required" 
-    age => "optional" 
-} 
+object (stdClass) #22 (0) => {}
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 93 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 115 ] 
 
-object (Closure) #9 (0) => {} 
+object (DateTime) #22 (0) => {}
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 106 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 140 ] 
 
-object (Week) #9 (1) => { 
-    name => "Saturday" 
-} 
+object (Foo) #20 (7) => {
+    name => ""
+    age => 555
+    [anonymous] object (class@anonymous) #18 (1) => {
+        name => "ahmed"
+    }
+    arr => "array"
+    [bar] object (Bar) #21 (1) => {
+        [arr] array (5) => [
+            a => "apple"
+            b => "banana"
+            [c] array (3) => [
+                0 => 1
+                1 => 2
+                [2] array (3) => [
+                    0 => 1
+                    1 => 2
+                    2 => 3
+                ]
+            ]
+            d => "dates"
+            [ahmed] array (0) => []
+        ]
+    }
+    phone => ""
+    [conn] object (PDO) #19 (0) => {}
+}
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 109 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 143 ] 
 
-array (5) => [ 
-    a => "apple" 
-    b => "banana" 
-    [c] array (3) => [ 
-        0 => 1 
-        1 => 2 
-        [2] array (3) => [ 
-            0 => 1 
-            1 => 2 
-            2 => 3 
-        ] 
-    ] 
-    d => "dates" 
-    [arr] array (0) => [] 
-] 
+object (class@anonymous) #17 (1) => {
+    [conn] object (PDO) #316 (0) => {}
+}
 
-[ Time : 09-01-2024 11:55:43 / File : DumperTest.php / Line : 118 ] 
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 155 ] 
 
-string (550) => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla inn." 
+object (class@anonymous) #17 (1) => {
+    [conn] object (PDO) #316 (0) => {}
+}
+
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 172 ] 
+
+object (Closure) #17 (2) => {
+    name => "required"
+    age => "optional"
+}
+
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 173 ] 
+
+object (Closure) #316 (0) => {}
+
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 176 ] 
+
+object (Week) #316 (1) => {
+    name => "Saturday"
+}
+
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 179 ] 
+
+array (5) => [
+    a => "apple"
+    b => "banana"
+    [c] array (3) => [
+        0 => 1
+        1 => 2
+        [2] array (3) => [
+            0 => 1
+            1 => 2
+            2 => 3
+        ]
+    ]
+    d => "dates"
+    [arr] array (0) => []
+]
+
+[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 189 ] 
+
+string (550) => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla inn."
+

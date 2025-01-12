@@ -263,10 +263,11 @@ abstract class BaseHandler implements HandlerInterface
     {
         $className = get_class($object);
         $objectId = spl_object_id($object);
-        $objectDetails = (array) $object;
+        $reflection = new \ReflectionClass($object);
+        $objectDetails = $reflection->getProperties();
 
         // handle anonymous class
-        if (preg_match("/class@anonymous/", $className)) {
+        if ($reflection->isAnonymous()) {
             $className = "class@anonymous";
         }
 
@@ -313,16 +314,28 @@ abstract class BaseHandler implements HandlerInterface
     
         $this->indentation += 4;
 
-        foreach ($objectDetails as $key => $value) {
-            // handle PHP special character
-            $key = strval(str_replace(["*", "\u0000", "\0"], '', $key));
+        if ($className === 'Closure') {
+            foreach ($objectDetails as $key => $value) {
+                // handle PHP special character
+                $key = strval(str_replace(["*", "\u0000", "\0"], '', $key));
 
-            // handler private properties
-            if (preg_match("/{$className}/", $key)) {
-                $key = str_replace($className, '', $key) . ' (private)';
+                // handler private properties
+                if (preg_match("/{$className}/", $key)) {
+                    $key = str_replace($className, '', $key) . ' (private)';
+                }
+
+                $this->process($value, $key);
             }
-
-            $this->process($value, $key);
+        } else {
+            foreach ($objectDetails as $property) {
+                $this->process(
+                    $property->getValue($object) != null ?
+                        $property->getValue($object) :
+                        ($property->getType() != null ?
+                            $property->getType()->getName() : ''),
+                    $property->getName()
+                );
+            }
         }
 
         $this->indentation -= 4;

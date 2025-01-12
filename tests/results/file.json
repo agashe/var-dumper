@@ -1,9 +1,9 @@
 {
-    "dump_8ca4535": {
+    "dump_1d3d455": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 8
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 97
         },
         "data": {
             "string (5)": "world",
@@ -12,64 +12,64 @@
             "value": null
         }
     },
-    "dump_e19076d": {
+    "dump_f7cf360": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 9
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 98
         },
         "data": {
             "RegExp (17)": "\/^([A-Za-z1-9])$\/"
         }
     },
-    "dump_bcbcc01": {
+    "dump_ba07b55": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 10
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 99
         },
         "data": {
             "Serializable (30)": "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
         }
     },
-    "dump_4f03475": {
+    "dump_13dff7c": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 11
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 100
         },
         "data": {
             "URL (25)": "http:\/\/www.helloworld.com"
         }
     },
-    "dump_061455e": {
+    "dump_fd38272": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 12
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 101
         },
         "data": {
             "Email (16)": "test@example.com"
         }
     },
-    "dump_5ed4172": {
+    "dump_f34c2f7": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 13
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 102
         },
         "data": {
             "Date\/Time (9)": "20-5-1995"
         }
     },
-    "dump_3a6de90": {
+    "dump_0e327c4": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 14
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 103
         },
         "data": {
-            "Resource id #29": {
+            "Resource id #45": {
                 "timed_out": "false",
                 "blocked": "true",
                 "eof": "false",
@@ -78,16 +78,16 @@
                 "mode": "r",
                 "unread_bytes": 0,
                 "seekable": "true",
-                "uri": "\/home\/mohamed\/Projects\/var-dumper\/tests\/results.txt",
+                "uri": "\/home\/mohamed\/Projects\/var-dumper\/tests\/results\/cli.txt",
                 "[options] array (0)": {}
             }
         }
     },
-    "dump_2c37ecf": {
+    "dump_fa24456": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 17
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 106
         },
         "data": {
             "array (3)": {
@@ -97,44 +97,41 @@
             }
         }
     },
-    "dump_397d2ec": {
+    "dump_8ec1a7b": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 20
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 109
         },
         "data": {
-            "object (stdClass) #2 (0)": {}
+            "object (stdClass) #22 (0)": {}
         }
     },
-    "dump_33dd311": {
+    "dump_e8e4819": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 23
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 116
         },
         "data": {
-            "object (DateTime) #2 (3)": {
-                "Date\/Time (26)": "1995-05-20 12:28:14.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
+            "object (DateTime) #22 (0)": {}
         }
     },
-    "dump_4c7e12d": {
+    "dump_873aae8": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 79
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 141
         },
         "data": {
-            "object (Foo) #5 (4)": {
-                "name": "NULL",
-                "age (private)": "NULL",
-                "[arr] object (class@anonymous) #6 (1)": {
+            "object (Foo) #20 (7)": {
+                "name": "",
+                "age": 555,
+                "[anonymous] object (class@anonymous) #18 (1)": {
                     "name": "ahmed"
                 },
-                "[bar] object (Bar) #4 (1)": {
+                "arr": "array",
+                "[bar] object (Bar) #21 (1)": {
                     "[arr] array (5)": {
                         "a": "apple",
                         "b": "banana",
@@ -150,62 +147,76 @@
                         "d": "dates",
                         "[ahmed] array (0)": {}
                     }
-                }
+                },
+                "phone": "",
+                "[conn] object (PDO) #19 (0)": {}
             }
         }
     },
-    "dump_92dfef7": {
+    "dump_058d624": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 82
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 144
         },
         "data": {
-            "object (class@anonymous) #7 (1)": {
-                "name": "ahmed"
+            "object (class@anonymous) #17 (1)": {
+                "[conn] object (PDO) #316 (0)": {}
             }
         }
     },
-    "dump_0588b2c": {
+    "dump_05ab75c": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 99
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 156
         },
         "data": {
-            "object (Closure) #7 (2)": {
+            "object (class@anonymous) #17 (1)": {
+                "[conn] object (PDO) #316 (0)": {}
+            }
+        }
+    },
+    "dump_5f9dfa2": {
+        "timestamp": {
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 173
+        },
+        "data": {
+            "object (Closure) #17 (2)": {
                 "name": "required",
                 "age": "optional"
             }
         }
     },
-    "dump_6234986": {
+    "dump_4a4cf10": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 100
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 174
         },
         "data": {
-            "object (Closure) #8 (0)": {}
+            "object (Closure) #316 (0)": {}
         }
     },
-    "dump_a11e1dd": {
+    "dump_6320a97": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 103
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 177
         },
         "data": {
-            "object (Week) #8 (1)": {
+            "object (Week) #316 (1)": {
                 "name": "Saturday"
             }
         }
     },
-    "dump_155d34f": {
+    "dump_23e0674": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 106
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 180
         },
         "data": {
             "array (5)": {
@@ -225,11 +236,11 @@
             }
         }
     },
-    "dump_d080964": {
+    "dump_56afb5b": {
         "timestamp": {
-            "time": "10-01-2024 08:05:03",
-            "file": "d.php",
-            "line": 116
+            "time": "12-01-2025 01:00:29",
+            "file": "DumperTest.php",
+            "line": 190
         },
         "data": {
             "string (550)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla inn."

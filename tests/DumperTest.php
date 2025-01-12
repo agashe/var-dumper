@@ -9,6 +9,21 @@ use VarDumper\Dumper;
 class DumperTest extends TestCase
 {
     /**
+     * ModelTest TearDown
+     *
+     * @return void
+     */
+    public function tearDown(): void
+    {
+        parent::tearDown();
+
+        // remove the dummy sqlite database;
+        if (file_exists(__DIR__ . '/../memory')) {
+            unlink(__DIR__ . '/../memory');
+        }
+    }
+
+    /**
      * Select output type and print the value according to.
      * 
      * @param string $outputType
@@ -125,7 +140,7 @@ class DumperTest extends TestCase
             'ahmed' => []
         ];
 
-        $foo->arr = new class
+        $foo->anonymous = new class
         {
             public $name;
 
@@ -143,11 +158,23 @@ class DumperTest extends TestCase
         $dumper(
             new class
             {
-                public $name;
+                public \PDO $conn;
 
                 public function __construct()
                 {
-                    $this->name = 'ahmed';
+                    $this->conn = new \PDO('sqlite:memory');
+                }
+            }
+        );
+        
+        $dumper(
+            new class
+            {
+                private $conn;
+
+                public function __construct()
+                {
+                    $this->conn = new \PDO('sqlite:memory');
                 }
             }
         );
@@ -305,11 +332,18 @@ class DumperTest extends TestCase
 class Foo
 {
     public $name;
-    private $age;
-    public $arr;
-    public $bar;
+    private int $age = 555;
+    public $anonymous;
+    private array $arr = [];
+    public Bar $bar;
     public static $phone;
     const country = '123';
+    private $conn;
+
+    public function __construct()
+    {
+        $this->conn = new \PDO('sqlite:memory');
+    }
 
     public function sayHallo($a)
     {
