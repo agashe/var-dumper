@@ -329,11 +329,13 @@ abstract class BaseHandler implements HandlerInterface
         } else {
             foreach ($objectDetails as $property) {
                 $this->process(
-                    $property->getValue($object) != null ?
-                        $property->getValue($object) :
-                        ($property->getType() != null ?
-                            $property->getType()->getName() : ''),
-                    $property->getName()
+                    !$property->isInitialized($object) || 
+                    empty($property->getValue($object)) ? 
+                        ($property->getType() != null ? 
+                            "(uninitialized) " . $property->getType()->getName() 
+                            : null) : $property->getValue($object),
+                    $property->getName() . ($property->isPrivate() ? 
+                        ' (private)' : '')
                 );
             }
         }

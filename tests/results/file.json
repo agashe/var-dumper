@@ -125,12 +125,12 @@
         },
         "data": {
             "object (Foo) #20 (7)": {
-                "name": "",
-                "age": 555,
+                "name": "NULL",
+                "age (private)": 555,
                 "[anonymous] object (class@anonymous) #18 (1)": {
                     "name": "ahmed"
                 },
-                "arr": "array",
+                "arr (private)": "(uninitialized) array",
                 "[bar] object (Bar) #21 (1)": {
                     "[arr] array (5)": {
                         "a": "apple",
@@ -148,8 +148,8 @@
                         "[ahmed] array (0)": {}
                     }
                 },
-                "phone": "",
-                "[conn] object (PDO) #19 (0)": {}
+                "phone": "NULL",
+                "[conn (private)] object (PDO) #19 (0)": {}
             }
         }
     },
@@ -173,7 +173,7 @@
         },
         "data": {
             "object (class@anonymous) #17 (1)": {
-                "[conn] object (PDO) #316 (0)": {}
+                "[conn (private)] object (PDO) #316 (0)": {}
             }
         }
     },

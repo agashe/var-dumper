@@ -1,0 +1,59 @@
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 45 ] 
+
+object (class@anonymous) #2 (1) => {
+    bar (private) => "(uninitialized) PDO"
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 48 ] 
+
+object (class@anonymous) #4 (1) => {
+    bar (private) => NULL
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 51 ] 
+
+object (class@anonymous) #5 (1) => {
+    bar (private) => 5
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 54 ] 
+
+object (class@anonymous) #6 (1) => {
+    bar (private) => "(uninitialized) int"
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 57 ] 
+
+object (class@anonymous) #7 (1) => {
+    bar (private) => 5
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 60 ] 
+
+object (class@anonymous) #8 (1) => {
+    bar => "(uninitialized) PDO"
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 63 ] 
+
+object (class@anonymous) #9 (1) => {
+    bar => NULL
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 66 ] 
+
+object (class@anonymous) #10 (1) => {
+    bar => 5
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 69 ] 
+
+object (class@anonymous) #11 (1) => {
+    bar => "(uninitialized) int"
+}
+
+[ Time : 18-01-2025 11:05:19 / File : index.php / Line : 72 ] 
+
+object (class@anonymous) #12 (1) => {
+    bar => 5
+}

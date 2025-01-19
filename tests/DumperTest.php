@@ -21,6 +21,10 @@ class DumperTest extends TestCase
         if (file_exists(__DIR__ . '/../memory')) {
             unlink(__DIR__ . '/../memory');
         }
+
+        // clear output files
+        file_put_contents(__DIR__ . "/output/file.txt", "");
+        file_put_contents(__DIR__ . "/output/file.json", "");
     }
 
     /**
@@ -90,6 +94,7 @@ class DumperTest extends TestCase
             );
 
             if (trim($results[$i]) != trim($validResults[$i])) {
+                var_dump($i, trim($results[$i]), trim($validResults[$i]));
                 return false;
             }
         }
@@ -200,8 +205,7 @@ class DumperTest extends TestCase
         ]);
 
         // test long text
-        // THIS LINE IS EXCEPTION FOR THE 80 CHARACTERS RULE :(
-        $dumper("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla inn.");
+        $dumper(file_get_contents(__DIR__ . '/results/long.txt'));
     }
 
     /**
@@ -260,9 +264,6 @@ class DumperTest extends TestCase
                 file_get_contents(__DIR__ . "/results/file.txt")
             )
         );
-
-        // clear output file
-        file_put_contents(__DIR__ . "/output/file.txt", "");
     }
 
     /**
@@ -281,9 +282,6 @@ class DumperTest extends TestCase
                 file_get_contents(__DIR__ . "/results/file.json")
             )
         );
-
-        // clear output file
-        file_put_contents(__DIR__ . "/output/file.json", "");
     }
 
     /**
@@ -323,6 +321,75 @@ class DumperTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
 
         dump_to_file("unknown_file");
+    }
+    
+    /**
+     * Test complex cases.
+     *
+     * @runInSeparateProcess
+     * @return void
+     */
+    public function testComplexCases()
+    {
+        ob_start();
+
+        $foo1 = new class {
+            private \PDO $bar;
+        };
+        
+        $foo2 = new class {
+            private $bar;
+        };
+        
+        $foo3 = new class {
+            private $bar = 5;
+        };
+        
+        $foo4 = new class {
+            private int $bar;
+        };
+        
+        $foo5 = new class {
+            private int $bar = 5;
+        };
+        
+        $foo6 = new class {
+            public \PDO $bar;
+        };
+        
+        $foo7 = new class {
+            public $bar;
+        };
+        
+        $foo8 = new class {
+            public $bar = 5;
+        };
+        
+        $foo9 = new class {
+            public int $bar;
+        };
+        
+        $foo10 = new class {
+            public int $bar = 5;
+        };
+
+        d($foo1);
+        d($foo2);
+        d($foo3);
+        d($foo4);
+        d($foo5);
+        d($foo6);
+        d($foo7);
+        d($foo8);
+        d($foo9);
+        d($foo10);
+
+        $this->assertTrue(
+            $this->checkResults(
+                ob_get_clean(), 
+                file_get_contents(__DIR__ . "/results/complex.txt")
+            )
+        );
     }
 }
 
