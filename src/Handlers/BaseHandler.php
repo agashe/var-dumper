@@ -92,7 +92,15 @@ abstract class BaseHandler implements HandlerInterface
 
                 break;
             case 'string':                
-                if (preg_match("/^\/[\s\S]+\/$/", $variableValue) !== 0) {
+                // don't add the special types inside the array , objects and 
+                // resources , since will make the dump confusing !
+                if (!empty($key) && ($key !== 0)) {
+                    $variableValue = $this->addQuotes($variableValue);
+                    $line = "{$variableType} => {$variableValue}";
+
+                    break;
+                } 
+                else if (preg_match("/^\/[\s\S]+\/$/", $variableValue) !== 0) {
                     $variableType = 'RegExp (' . strlen($variable) . ')';
                     $line = "{$variableType} => {$variableValue}";
 
