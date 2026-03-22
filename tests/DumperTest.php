@@ -205,7 +205,10 @@ class DumperTest extends TestCase
         ]);
 
         // test long text
-        $dumper(file_get_contents(__DIR__ . '/results/long.txt'));
+        $dumper(file_get_contents(__DIR__ . '/input/long.txt'));
+
+        // test complex html
+        $dumper(file_get_contents(__DIR__ . '/input/html.txt'));
     }
 
     /**

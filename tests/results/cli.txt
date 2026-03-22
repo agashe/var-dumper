@@ -1,4 +1,4 @@
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 96 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 116 ] 
 
 string (5) => "ahmed"
 double => 5.6
@@ -6,27 +6,27 @@ boolean => false
 string (5) => "world"
 NULL
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 97 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 117 ] 
 
 RegExp (17) => /^([A-Za-z1-9])$/
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 98 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 118 ] 
 
 Serializable (30) => "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 99 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 119 ] 
 
 URL (25) => "http://www.helloworld.com"
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 100 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 120 ] 
 
 Email (16) => "test@example.com"
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 101 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 121 ] 
 
 Date/Time (9) => "20-5-1995"
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 102 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 122 ] 
 
 Resource id #33 => {
     timed_out => false
@@ -41,7 +41,7 @@ Resource id #33 => {
     [options] array (0) => []
 }
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 105 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 125 ] 
 
 array (3) => [
     0 => 1
@@ -49,24 +49,24 @@ array (3) => [
     2 => 3
 ]
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 108 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 128 ] 
 
-object (stdClass) #22 (0) => {}
+object (stdClass) #24 (0) => {}
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 115 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 135 ] 
 
-object (DateTime) #22 (0) => {}
+object (DateTime) #24 (0) => {}
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 140 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 160 ] 
 
-object (Foo) #20 (7) => {
+object (Foo) #22 (7) => {
     name => NULL
     age (private) => 555
-    [anonymous] object (class@anonymous) #18 (1) => {
+    [anonymous] object (class@anonymous) #20 (1) => {
         name => "ahmed"
     }
     arr (private) => "(uninitialized) array"
-    [bar] object (Bar) #21 (1) => {
+    [bar] object (Bar) #23 (1) => {
         [arr] array (5) => [
             a => "apple"
             b => "banana"
@@ -84,39 +84,39 @@ object (Foo) #20 (7) => {
         ]
     }
     phone => NULL
-    [conn (private)] object (PDO) #19 (0) => {}
+    [conn (private)] object (PDO) #21 (0) => {}
 }
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 143 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 163 ] 
 
-object (class@anonymous) #17 (1) => {
-    [conn] object (PDO) #316 (0) => {}
+object (class@anonymous) #19 (1) => {
+    [conn] object (PDO) #317 (0) => {}
 }
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 155 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 175 ] 
 
-object (class@anonymous) #17 (1) => {
-    [conn (private)] object (PDO) #316 (0) => {}
+object (class@anonymous) #19 (1) => {
+    [conn (private)] object (PDO) #317 (0) => {}
 }
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 172 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 192 ] 
 
-object (Closure) #17 (2) => {
+object (Closure) #19 (2) => {
     name => "required"
     age => "optional"
 }
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 173 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 193 ] 
 
-object (Closure) #316 (0) => {}
+object (Closure) #317 (0) => {}
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 176 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 196 ] 
 
-object (Week) #316 (1) => {
+object (Week) #317 (1) => {
     name => "Saturday"
 }
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 179 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 199 ] 
 
 array (5) => [
     a => "apple"
@@ -134,7 +134,408 @@ array (5) => [
     [arr] array (0) => []
 ]
 
-[ Time : 12-01-2025 12:38:29 / File : DumperTest.php / Line : 189 ] 
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 208 ] 
 
 string (550) => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla inn."
+
+[ Time : 22-03-2026 11:00:49 / File : DumperTest.php / Line : 211 ] 
+
+string (11027) => "<p>
+    Routing in SigmaPHP is designed to be simple, explicit, and easy to scale.
+    Routes are defined using plain PHP arrays, making them easy to read,
+    maintain, and organize across multiple files as your application grows.
+    Whether you are building a small website or a large API, the router
+    keeps everything predictable and structured.
+</p>
+
+<h3>Basic Setup</h3>
+
+<p>
+    Routes can be stored in separate files and loaded into your application.
+    Splitting routes into multiple files is recommended, allowing you to
+    organize web routes, API endpoints, or admin routes independently.
+</p>
+
+<p><strong>web.php</strong></p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+&lt;?php
+
+return [
+    [
+        'name' => 'users.profile',
+        'path' => '/users/profile',
+        'method' => 'get',
+        'controller' => UserController::class,
+        'action' => 'profile',
+    ],
+];
+    </code></pre>
+</div>
+
+<p><strong>api.php</strong></p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+&lt;?php
+
+return [
+    [
+        'name' => 'api.users.profile',
+        'path' => '/api/v1/users/profile',
+        'method' => 'get',
+        'controller' => UserApiController::class,
+        'action' => 'profileJson',
+    ],
+];
+    </code></pre>
+</div>
+
+<p>
+    To define a route, simply append a new route array. At minimum,
+    a route requires a <code>path</code> and an <code>action</code>.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+$routes = [
+    [
+        'name' => 'users.profile',
+        'path' => '/users/profile',
+        'method' => 'get',
+        'controller' => UserController::class,
+        'action' => 'profile',
+    ],
+    [
+        'path' => '/users/bio',
+        'controller' => UserApiController::class,
+        'action' => 'userBio',
+    ],
+];
+    </code></pre>
+</div>
+
+<p>
+    Naming routes is optional but highly recommended. Named routes make URL
+    generation easier and help avoid hard-coding paths across the application.
+</p>
+
+<p>
+    The global helper <code>baseUrl()</code> returns the full application
+    base URL including protocol, domain, and configured base path.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+print baseUrl();
+
+# http://localhost/
+    </code></pre>
+</div>
+
+<h3>HTTP Methods</h3>
+
+<p>
+    SigmaPHP Router supports all common HTTP methods such as GET, POST,
+    PUT, PATCH, and DELETE. A route may accept one or multiple methods.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+$routes = [
+    [
+        'name' => 'users.profile',
+        'path' => '/users/profile',
+        'method' => 'get,post',
+        'controller' => UserController::class,
+        'action' => 'profile',
+    ],
+];
+    </code></pre>
+</div>
+
+<p>
+    You may also use the special <code>any</code> method to accept all HTTP methods.
+    If no method is specified, the router automatically defaults to GET.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+'method' => 'any'
+    </code></pre>
+</div>
+
+<p>
+    TRACE and CONNECT methods are intentionally unsupported for security
+    reasons. HEAD requests behave like GET without a response body, and
+    OPTIONS requests automatically return allowed methods.
+</p>
+
+<h3>Parameters</h3>
+
+<p>
+    Route parameters use curly bracket syntax and are automatically passed
+    to the controller action in the same order.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+'path' => '/admin/users/{user_id}/addresses/{address_id}',
+    </code></pre>
+</div>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+public function getUserAddressDetails($userId, $addressId) {
+    ...
+}
+    </code></pre>
+</div>
+
+<p>
+    Optional parameters can be defined using <code>?</code> and must appear
+    only at the end of the route path.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+'path' => '/products/{id?}',
+    </code></pre>
+</div>
+
+<p>
+    Optional parameters should include default values in the controller action.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+public function list($id = null) {
+    ...
+}
+    </code></pre>
+</div>
+
+<p>
+    Query parameters are automatically available through the global
+    <code>$_GET</code> variable.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+curl http://localhost/products?page=2&amp;per_page=10
+    </code></pre>
+</div>
+
+<h3>Validation</h3>
+
+<p>
+    Routes may include validation rules using regular expressions.
+    If validation fails, the router will automatically return a 404 response.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+$routes = [
+    [
+        'name' => 'orders.show',
+        'path' => '/orders/details/{order_id}',
+        'method' => 'get',
+        'controller' => OrderController::class,
+        'action' => 'show',
+        'validation' => [
+            'order_id' => '[0-9]+'
+        ]
+    ],
+];
+    </code></pre>
+</div>
+
+<p>
+    In the example above, the router will match only an <code>order_id</code> that contains digits.
+    Therefore, a URL such as <code>/orders/details/abcd</code> will not be matched,
+    and the router will return a <strong>404 – Page Not Found</strong> response.
+</p>
+
+<h3>Actions</h3>
+
+<p>
+    Actions define what happens when a route is successfully matched. In most
+    cases, an action points to a controller class and a specific method that
+    will handle the incoming request, execute the required business logic,
+    and return a response.
+</p>
+
+<p>
+    The router resolves the controller from the container, then calls the
+    specified method. This keeps route definitions clean while allowing
+    controllers to remain focused on a single responsibility.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+'controller' => OrderController::class,
+'action' => 'show',
+    </code></pre>
+</div>
+
+<p>
+    In the example above, once the route is matched, the router will instantiate
+    <code>OrderController</code> and execute the <code>show()</code> method.
+    Route parameters, request objects, or dependencies may be automatically
+    injected depending on the framework configuration.
+</p>
+
+<h3>Route Groups</h3>
+
+<p>
+    Route groups allow applying prefixes, controllers, or middlewares
+    to multiple routes at once, reducing duplication and improving organization.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+[
+    'group' => 'api',
+    'prefix' => '/api/v1/',
+    'controller' => UserApiController::class,
+    'middlewares' => [
+        [AuthMiddleware::class, 'handler'],
+        [UserAccountIsActiveMiddleware::class, 'handler'],
+    ],
+    'routes' => [
+        [
+            'name' => 'users.profile',
+            'path' => '/users/profile',
+            'method' => 'get',
+            'action' => 'show'
+        ],
+        [
+            'name' => 'users.profile',
+            'path' => '/users/profile',
+            'method' => 'put',
+            'action' => 'update'
+        ],
+        // rest of the routes....
+    ]
+]
+    </code></pre>
+</div>
+
+<p>
+    The only required elements for a route group are the group name and the routes array.
+    The group name is automatically prefixed to all contained routes. For example,
+    the final route name becomes <code>api.users.profile</code> and the full route
+    path becomes <code>/api/v1/users/profile</code>.
+</p>
+
+<p>
+    The <code>prefix</code>, <code>controller</code>, and <code>middlewares</code>
+    options are completely optional. A route group may define any combination of
+    these settings, or none at all, depending on the application needs.
+</p>
+
+<p>
+    Route definitions inside a group behave exactly like regular routes, with all
+    features remaining available. If necessary, the group’s default
+    <code>controller</code> can be overridden by explicitly defining a different
+    controller at the route level.
+</p>
+
+<div class="alert alert-warning">
+    <div class="alert-content">
+        <p>
+            Sub-groups are not supported at the moment !
+        </p>
+    </div>
+</div>
+
+<h3>URL Generation</h3>
+
+<p>
+    SigmaPHP provides the <code>url()</code> helper to generate URLs using
+    route names and parameters, avoiding hard-coded links.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-php">
+
+$routes = [
+    [
+        'name' => 'order.items.details',
+        'path' => '/order/{order_id}/items/{item_id?}',
+        'method' => 'get',
+        'controller' => OrderController::class,
+        'action' => 'getOrderItems',
+    ],
+];
+
+...
+
+$url = url('order.items.details', [
+    'order_id' => 5,
+    'item_id' => 10,
+]);
+
+# http://localhost/order/5/items/10
+    </code></pre>
+</div>
+<p>
+    The router automatically builds the full URL including protocol,
+    domain, and base path configuration.
+</p>
+
+<h3>HTTP Method Override</h3>
+
+<p>
+    Since HTML forms support only GET and POST, SigmaPHP implements
+    HTTP Method Override using a hidden <code>_method</code> field.
+    This allows forms to simulate PUT, PATCH, or DELETE requests.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-html">
+&lt;form action="/products" method="POST"&gt;
+    &lt;input type="hidden" name="_method" value="PUT" /&gt;
+    &lt;button type="submit"&gt;Save&lt;/button&gt;
+&lt;/form&gt;
+    </code></pre>
+</div>
+
+<p>
+    This feature is enabled by default and can be controlled using the
+    <code>allow_http_method_override</code> option inside the <code>app.php</code>
+    configuration file.
+</p>
+
+<div class="code-card">
+    <button class="copy-btn" title="copy"><i class="bi bi-copy"></i></button>
+    <pre><code class="language-html">
+...
+
+//**
+* HTTP method override.
+*/
+'allow_http_method_override' => true,
+    </code></pre>
+</div>
+
+<p></p>
+"
 

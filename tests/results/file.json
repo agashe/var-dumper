@@ -1,9 +1,9 @@
 {
-    "dump_1d3d455": {
+    "dump_0ec5462": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 97
+            "line": 116
         },
         "data": {
             "string (5)": "world",
@@ -12,61 +12,61 @@
             "value": null
         }
     },
-    "dump_f7cf360": {
+    "dump_c250c27": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 98
+            "line": 117
         },
         "data": {
             "RegExp (17)": "\/^([A-Za-z1-9])$\/"
         }
     },
-    "dump_ba07b55": {
+    "dump_9133571": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 99
+            "line": 118
         },
         "data": {
             "Serializable (30)": "a:3:{i:0;i:1;i:1;i:2;i:2;i:3;}"
         }
     },
-    "dump_13dff7c": {
+    "dump_6023f47": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 100
+            "line": 119
         },
         "data": {
             "URL (25)": "http:\/\/www.helloworld.com"
         }
     },
-    "dump_fd38272": {
+    "dump_eac88e4": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 101
+            "line": 120
         },
         "data": {
             "Email (16)": "test@example.com"
         }
     },
-    "dump_f34c2f7": {
+    "dump_2c36f98": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 102
+            "line": 121
         },
         "data": {
             "Date\/Time (9)": "20-5-1995"
         }
     },
-    "dump_0e327c4": {
+    "dump_6ae38ac": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 103
+            "line": 122
         },
         "data": {
             "Resource id #45": {
@@ -83,11 +83,11 @@
             }
         }
     },
-    "dump_fa24456": {
+    "dump_2fb05fc": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 106
+            "line": 125
         },
         "data": {
             "array (3)": {
@@ -97,41 +97,41 @@
             }
         }
     },
-    "dump_8ec1a7b": {
+    "dump_36bf08c": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 109
+            "line": 128
         },
         "data": {
-            "object (stdClass) #22 (0)": {}
+            "object (stdClass) #24 (0)": {}
         }
     },
-    "dump_e8e4819": {
+    "dump_f8d62c9": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 116
+            "line": 135
         },
         "data": {
-            "object (DateTime) #22 (0)": {}
+            "object (DateTime) #24 (0)": {}
         }
     },
-    "dump_873aae8": {
+    "dump_c2b526d": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 141
+            "line": 160
         },
         "data": {
-            "object (Foo) #20 (7)": {
+            "object (Foo) #22 (7)": {
                 "name": "NULL",
                 "age (private)": 555,
-                "[anonymous] object (class@anonymous) #18 (1)": {
+                "[anonymous] object (class@anonymous) #20 (1)": {
                     "name": "ahmed"
                 },
                 "arr (private)": "(uninitialized) array",
-                "[bar] object (Bar) #21 (1)": {
+                "[bar] object (Bar) #23 (1)": {
                     "[arr] array (5)": {
                         "a": "apple",
                         "b": "banana",
@@ -149,74 +149,74 @@
                     }
                 },
                 "phone": "NULL",
-                "[conn (private)] object (PDO) #19 (0)": {}
+                "[conn (private)] object (PDO) #21 (0)": {}
             }
         }
     },
-    "dump_058d624": {
+    "dump_0a54890": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 144
+            "line": 163
         },
         "data": {
-            "object (class@anonymous) #17 (1)": {
-                "[conn] object (PDO) #316 (0)": {}
+            "object (class@anonymous) #19 (1)": {
+                "[conn] object (PDO) #317 (0)": {}
             }
         }
     },
-    "dump_05ab75c": {
+    "dump_7454ab5": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 156
+            "line": 175
         },
         "data": {
-            "object (class@anonymous) #17 (1)": {
-                "[conn (private)] object (PDO) #316 (0)": {}
+            "object (class@anonymous) #19 (1)": {
+                "[conn (private)] object (PDO) #317 (0)": {}
             }
         }
     },
-    "dump_5f9dfa2": {
+    "dump_c6810b2": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 173
+            "line": 192
         },
         "data": {
-            "object (Closure) #17 (2)": {
+            "object (Closure) #19 (2)": {
                 "name": "required",
                 "age": "optional"
             }
         }
     },
-    "dump_4a4cf10": {
+    "dump_c50d521": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 174
+            "line": 193
         },
         "data": {
-            "object (Closure) #316 (0)": {}
+            "object (Closure) #317 (0)": {}
         }
     },
-    "dump_6320a97": {
+    "dump_cdf5db9": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 177
+            "line": 196
         },
         "data": {
-            "object (Week) #316 (1)": {
+            "object (Week) #317 (1)": {
                 "name": "Saturday"
             }
         }
     },
-    "dump_23e0674": {
+    "dump_04e1af7": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 180
+            "line": 199
         },
         "data": {
             "array (5)": {
@@ -236,14 +236,22 @@
             }
         }
     },
-    "dump_56afb5b": {
+    "dump_317d119": {
         "timestamp": {
-            "time": "12-01-2025 01:00:29",
+            "time": "22-03-2026 11:05:37",
             "file": "DumperTest.php",
-            "line": 190
+            "line": 208
         },
         "data": {
             "string (550)": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris viverra at est sed vestibulum. Ut ultricies urna et bibendum sollicitudin. Maecenas suscipit bibendum ante convallis dignissim. Nulla facilisi. Sed mollis eget purus eget finibus.Donec convallis risus sit amet dapibus vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum vel aliquet ante. Suspendisse vitae neque non nulla viverra blandit at at diam. Phasellus imperdiet quis lacus sed facilisis. Mauris lacinia arcu lorem, quis commodo arcu fringilla inn."
         }
+    },
+    "dump_e0fad94": {
+        "timestamp": {
+            "time": "22-03-2026 11:05:37",
+            "file": "DumperTest.php",
+            "line": 211
+        },
+        "data": {}
     }
 }
