@@ -49,8 +49,24 @@ class WebHandler extends BaseHandler
         $key = '';
         $parent = '';
         $displayStyle = '';
-
+        
         foreach ($this->output as $i => $line) {
+            // We do the following processing in case long html text !!
+            if (strpos($line, '=> "') !== false) {
+                $parts = explode('=> "', $line, 2);
+
+                if (isset($parts[1])) {
+                    $parts[1] = htmlentities(
+                        trim($parts[1], '"'), 
+                        ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML5, 
+                        'UTF-8'
+                    );
+
+                    $parts[1] = ' "' . $parts[1] . '"';
+                    $line = implode('=>', $parts);
+                }
+            }
+            
             // for the last line we add the border-bottom style
             if ($i == (count($this->output) - 1)) {
                 $lineStyle[] = 'border-bottom: 5px solid ' . 
@@ -140,8 +156,8 @@ class WebHandler extends BaseHandler
                 }
             } 
             else if (strpos($line, '=>') !== false) {
-                $parts = explode('=>', $line);
-    
+                $parts = explode('=>', $line, 2);
+
                 $line = $this->convertToHtml($parts[0], $this->colors['type']);
                 $line .= $this->convertToHtml("=>", $this->colors['arrow']);
                 $line .= $this->convertToHtml(
@@ -204,10 +220,10 @@ class WebHandler extends BaseHandler
     private function convertToHtml($content, $color = 'black')
     {
         $text = trim($content);
-
+        
         // handle long text by adding fold functionality
         if (strlen($text) > 150) {
-            $tag = "<span style=\"cursor: pointer\" " . 
+            $tag = "<span style=\"cursor: pointer\" data-html=\"true\" " . 
                 'data-text=' . $text . ' ' .
                 "onclick=\"toggleTextFold(this);\">" .
                 substr($text, 0, 150) . "...\"</span>";
@@ -348,10 +364,12 @@ class WebHandler extends BaseHandler
                 }
 
                 function toggleTextFold(el) {
-                    let currentText = el.innerText;
-                    
-                    el.innerText = el.getAttribute("data-text");
-                    el.setAttribute("data-text", currentText);
+                    let currentText = el.innerText.replaceAll('"', '');
+
+                    el.innerText = '"' + 
+                        el.getAttribute("data-text").replaceAll('"', '') + '"'; 
+                    el.setAttribute("data-text", 
+                        currentText.replaceAll('"', ''));
                 }
             </script>
         JS;
